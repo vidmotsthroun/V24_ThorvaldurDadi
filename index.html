@@ -1,77 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>three.js ar - plane detection</title>
+		<title>AR</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-		<link type="text/css" rel="stylesheet" href="main.css">
-	</head>
+		<style type="text/css">
+			body .dg li.title,
+			body .dg li:not(.folder),
+			body .dg.main .close-button {
+				background-color: rgba(0, 0, 0, 0.5);
+			}
+
+			body {
+				background: rgba(240,255,255,1);
+			}
+			
+			li {
+				background: rgba(240,255,255,1);
+			}
+			
+			a {
+				color: rgba(0,25,55,1);
+			}
+		</style>
+	</head>	
 	<body>
-
-		<div id="info">
-			<a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> ar - plane detection<br/>(Chrome Android 81+)
-		</div>
-
-		<script type="importmap">
-			{
-				"imports": {
-					"three": "https://cdn.jsdelivr.net/npm/three@v0.163.0/build/three.module.js",
-					"three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.163.0/examples/jsm/"
-				}
-			}
-		</script>
-
-		<script type="module">
-
-			import * as THREE from 'three/';
-			import { ARButton } from 'three/addons/webxr/ARButton.js';
-			import { XRPlanes } from 'three/addons/webxr/XRPlanes.js';
-
-			//
-
-			const renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true } );
-			renderer.setPixelRatio( window.devicePixelRatio );
-			renderer.setSize( window.innerWidth, window.innerHeight );
-			renderer.setAnimationLoop( render );
-			renderer.xr.enabled = true;
-			document.body.appendChild( renderer.domElement );
-
-			document.body.appendChild( ARButton.createButton( renderer, {
-				requiredFeatures: [ 'plane-detection' ]
-			} ) );
-
-			window.addEventListener( 'resize', onWindowResize );
-
-			//
-
-			const scene = new THREE.Scene();
-
-			const planes = new XRPlanes( renderer );
-			scene.add( planes );
-
-			const camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.01, 20 );
-
-			const light = new THREE.HemisphereLight( 0xffffff, 0xbbbbff, 3 );
-			light.position.set( 0.5, 1, 0.25 );
-			scene.add( light );
-
-			//
-
-			function onWindowResize() {
-
-				camera.aspect = window.innerWidth / window.innerHeight;
-				camera.updateProjectionMatrix();
-
-				renderer.setSize( window.innerWidth, window.innerHeight );
-
-			}
-
-			function render() {
-
-				renderer.render( scene, camera );
-
-			}
-
-		</script>
+		
+<h3>Live Examples</h3>
+<h4>Physics</h4>
+<ul>
+<li><a href="html/arMagneticField.html">Magnetic Fields</a></li>
+<li><a href="html/magDipole.html">Magnetic Dipole</a></li>
+<li><a href="html/arManyBody.html">N-body visualization</a></li>
+<li><a href="html/hydrogenAtom.html">Hydrogen Orbitals</a></li>
+<li><a href="html/dopplerEffect.html">Relativistic Doppler</a></li>
+<li><a href="html/arQuantumHarmonic.html">Quantum Harmonic Oscillator</a></li>
+</ul>
+<h4>Core Api</h4>
+<ul>
+<li><a href="html/ArSkeleton.html"> Skeleton</a></li>
+<li><a href="html/arRuler.html"> Augmented Reality Ruler</a></li>
+<li><a href="html/cameraAccess.html">camera access</a></li>
+<li><a href="html/depthOcclusion.html"> Threejs occlusion example</a></li>
+<li><a href="html/depthCapture.html"> Capturing  depth images to file</a></li>
+<li><a href="html/depthMesh.html"> Creating a planar mesh with the depth api</a></li>
+<li><a href="html/lightEstimation.html">Light Estimation</a></li>
+<li><a href="html/arRecord.html">Record Motions to txt file</a></li>
+<li><a href="html/animation.html">Animation with Handdrawn Character</a></li>
+<li><a href="html/audioTour.html">Audio Tour</a></li>
+<li><a href="html/arPlaneDetection.html">Plane Detection</a></li>
+</ul>
+<h4>Simple Projects</h4>
+<ul>
+<li><a href="html/arCharts.html"> Charts</a></li>
+<li><a href="html/arDrawing.html"> Drawing</a></li>
+<li><a href="html/arFabric.html"> Image Manipulation</a></li>
+<li><a href="html/arChartGeo.html"> Earth</a></li>
+<li><a href="html/arIFrame.html"> arIFrame</a></li>
+</ul>
+<h4>Fun Projects</h4>
+<ul>
+<li><a href="html/kaleidoscope.html"> kaleidoscope</a></li>
+</ul>
+<h4>Larger Projects</h4>
+<ul>
+<li><a href="html/depthPhysics.html"> ammo.js physics engine + depth api</a></li>
+<li><a href="html/predictDipole.html"> an attempt at metal detection</a></li>
+<li><a href="html/arRegina.html"> gis example</a></li>
+<li><a href="html/arGrainElevator.html">Photogrammetry</a></li>
+</ul>
+		<p> These only work on mobile.</p>
 	</body>
 </html>
