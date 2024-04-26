@@ -15,15 +15,15 @@
 		<script type="importmap">
 			{
 				"imports": {
-					"three": "../build/three.module.js",
-					"three/addons/": "./jsm/"
+					"three": "https://cdn.jsdelivr.net/npm/three@v0.163.0/build/three.module.js",
+					"three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.163.0/examples/jsm/"
 				}
 			}
 		</script>
 
 		<script type="module">
 
-			import * as THREE from 'three';
+			import * as THREE from 'three/';
 			import { ARButton } from 'three/addons/webxr/ARButton.js';
 			import { XRPlanes } from 'three/addons/webxr/XRPlanes.js';
 
