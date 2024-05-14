@@ -45,9 +45,6 @@ const a_light = new THREE.AmbientLight( 0xff0000, 0.3 ); // soft white light
 var cube = new THREE.Mesh(defaultGeometry, redMaterial);	
 
 scene.add( a_light );
-scene.add(cube);
-
-scene.add( new THREE.AxesHelper(2) );
 
 function update_scene( t )
 {
