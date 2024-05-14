@@ -1,0 +1,218 @@
+body{
+    color: white;
+    background-color: black;
+    
+}
+
+.scoreboard {
+    height: 65px;
+    width: 100%;
+    position: relative;
+    background-color: rgb(163, 163, 163);
+    
+    .leftField{
+        display: inline-flex;
+        height: 40px;
+        width: 175px;
+        
+        position: absolute;
+        top: 50%;
+        margin: -20px 0 0 15px;
+        column-gap: 5px;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        h3{
+            margin: 0;
+            text-align: center;
+            font-size: larger;
+            
+        }
+    }
+    .rightField{
+        display: inline-flex;
+        height: 40px;
+        width: 275px;
+        
+        position: absolute;
+        top: 50%;
+        right: 50px;
+        margin: -20px 0 0 15px;
+        column-gap: 20px;
+        justify-content: center;
+        align-items: center;
+        
+        background-color: black;
+        #playerScore{
+            color: rgb(0, 179, 255);
+            position: absolute;
+            left: 5px;
+            width: 50%;
+        }
+        #computerScore{
+            color: rgb(255, 51, 0);
+            position: absolute;
+            right: 5px;
+            width: 50%;
+        }
+        h3{
+            margin: 0;
+            text-align: center;
+            font-size: large;
+        }
+    }
+}
+#borderAni {
+    background-image: linear-gradient(90deg, white 50%, transparent 50%), linear-gradient(90deg, white 50%, transparent 50%), linear-gradient(0deg, white 50%, transparent 50%), linear-gradient(0deg, white 50%, transparent 50%);
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 15px 2px, 15px 2px, 2px 15px, 2px 15px;
+    background-position: left top, right bottom, left bottom, right top;
+    animation: border-dance 1s infinite linear;
+    }
+    
+    @keyframes border-dance {
+    0% {
+        background-position: left top, right bottom, left bottom, right top;
+    }
+    
+    100% {
+        background-position: left 15px top, right 15px bottom, left bottom 15px, right top 15px;
+    }
+}
+#player_interface{
+    display: grid;
+    position: relative;
+    left: 5%;
+    top: 300px;
+    height: 250px;
+    width: 515px;
+}
+.player_choice{
+    position: absolute;
+    
+    display: flex;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 25px;
+    justify-content: center;
+    font-weight: 300;
+    
+
+}
+.player_choice button{
+    border-color: purple;
+    border-radius: 5px;
+    border-width: 5px;
+    background-color: cyan;
+    height: 170px;
+    width: 155px;
+
+}
+#confirm {
+    display: grid;
+    background-color: #898989;
+    border-color: purple;
+    border-radius: 5px;
+    border-width: 5px;
+    height: 50px;
+    width: 515px;
+    position: absolute;
+    bottom: 0%;
+    font-size: x-large;
+    font-style: oblique;
+    font-family:cursive;
+    align-content: center;
+    
+}
+.player_choice button:hover{
+    animation-name: mouse-hoverButtom;
+    -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
+    animation-fill-mode: forwards;  
+    animation-duration: 0.45s;
+}
+.player_choice button:hover img{
+    animation-name: mouse-hoverButtom_img;
+    -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
+    animation-fill-mode: forwards;
+    animation-duration: 0.45s;
+}
+.player_choice button:not(:hover) img{
+    animation-name: mouse-awayButtom_img;
+    animation-duration: 0.45s;
+    
+}
+.player_choice img{
+    
+    height: 75px;
+    width: 75px;
+    
+}
+#computer_interface{
+    position: absolute;
+    right: 15%;
+}
+.computer_choice{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 25px;
+    font-weight: 300;
+    height: auto;
+    width: auto;
+    .model{
+        
+        position: relative;
+        border-color: purple;
+        border-radius: 5px;
+        border-width: 5px;
+        border-style: solid;
+        background-color: crimson;
+        height: 170px;
+        width: 155px;
+        
+        
+    }
+    img{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -40px;
+        margin-left: -40px;
+        height: 80px;
+        width: 80px;
+    }
+}
+#canvas{
+    display: flex;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    margin-top: -190px;
+    
+    height: 480px;
+    width: 35%;
+}
+@keyframes mouse-hoverButtom_img{
+    
+    from {height: 75px; width: 75px;
+        transform: rotate(0deg)}
+    to {transform: rotate(-35deg);
+        height: 80px; width: 80px;
+    }
+    
+}    
+
+@keyframes mouse-hoverButtom{
+    from {background-color: cyan;}
+    to {background-color: cornflowerblue;}
+}
+@keyframes mouse-awayButtom_img {
+    
+    from {height: 80px; width: 80px;
+        transform: rotate(-35deg)}
+    to {transform: rotate(0deg);
+        height: 75px; width: 75px;
+    }
+}
+@keyframes mouse-awayButtom {
+    from {background-color: cornflowerblue;}
+    to {background-color: cyan;}
+}

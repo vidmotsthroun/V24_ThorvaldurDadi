@@ -1,0 +1,11 @@
+{
+    "player": {
+        "score": 0,
+        "move": 1
+    },
+    "bot": {
+        "score": 3,
+        "move": 2
+    } 
+    
+}
