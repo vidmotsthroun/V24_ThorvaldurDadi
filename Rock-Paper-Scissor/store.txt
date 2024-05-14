@@ -1,0 +1,5 @@
+<div class="computer_choice" id="computer_interface">
+        <div id="Rock" class="model"><img src="Assets/rock.svg" alt="His rock"></div>
+        <div id="Paper" class="model"><img src="Assets/paper.svg" alt="His paper"></div>
+        <div id="Scissor" class="model"><img src="Assets/scissor.svg" alt="His scissor"></div>
+    </div>

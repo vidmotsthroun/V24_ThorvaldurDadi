@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <link rel="stylesheet" href="style.css">
+    <title>Rock Paper Scissor</title>
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@v0.163.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.163.0/examples/jsm/"
+            
+          }
+          
+        }
+    </script>
+    <script async src="https://ga.jspm.io/npm:es-module-shims@1.5.1/dist/es-module-shims.js" crossorigin="anonymous"></script>
+    <script type="module" src="main.js"></script>
+</head>
+
+<body>
+    
+    <header class="scoreboard"> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+        
+        <div id="borderAni" class="leftField" >
+
+            <h3 id="label_r">Rock</h3><h3 id="label_p">Paper</h3><h3 id="label_s">Scissor</h3>
+        </div>
+        <div id="borderAni" class="rightField">
+            <h3 id="playerScore">Player: 0</h3><h3 id="computerScore">0 :Computer</h3>
+        </div>
+    </header>
+    <div id="player_interface">
+        <div class="player_choice">
+            <button id="Rock"><img src="Assets/Images/rock.svg" alt="Your rock"></button>
+            <button id="Paper"><img src="Assets/Images/paper.svg" alt="Your paper"></button>
+            <button id="Scissor"><img src="Assets/Images/scissor.svg" alt="Your scissor"></button>
+            
+        </div>
+        <button id="confirm"><h4>Confirm</h4></button>
+    </div>
+    
+    <div id="canvas"></div>
+</body>
+
