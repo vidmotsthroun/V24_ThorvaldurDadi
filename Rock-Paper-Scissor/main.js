@@ -239,6 +239,49 @@ function activate(){
     document.getElementById("confirm").style.backgroundColor = "#898989";
     document.getElementById("confirm").style.color = "#000000";
 }
+var h = document.getElementsByClassName("hold_trigger");
+function onLongPress(element, callback) {
+    let timer;
+    element.addEventListener("contextmenu", function(event) {
+        event.preventDefault();
+    });
+    element.addEventListener('touchstart', () => { 
+      timer = setTimeout(() => {
+        timer = null;
+        callback();
+      }, 500);
+    });
+  
+    function cancel() {
+      clearTimeout(timer);
+    }
+  
+    element.addEventListener('touchend', cancel);
+    element.addEventListener('touchmove', cancel);
+  }
+  onLongPress(document.getElementById("Rock"), (event) => {
+    if(active_continue == true){
+        handMoves("rock");
+        beginRound();
+    }
+    
+  });
+  onLongPress(document.getElementById("Paper"), (event) => {
+    
+    if(active_continue == true){
+        handMoves("paper");
+        beginRound();
+    }
+    
+  });
+  onLongPress(document.getElementById("Scissor"), (event) => {
+    
+    if(active_continue == true){
+        handMoves("scissor");
+        beginRound();
+    }
+    
+  });
 async function beginRound(){
     if(active_continue == true){
         deactivate();
