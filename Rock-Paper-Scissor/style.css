@@ -199,7 +199,9 @@ body{
     }
     
 }    
-
+.that{
+    cursor: pointer;
+}
 @keyframes mouse-hoverButtom{
     from {background-color: cyan;}
     to {background-color: cornflowerblue;}
@@ -215,4 +217,68 @@ body{
 @keyframes mouse-awayButtom {
     from {background-color: cornflowerblue;}
     to {background-color: cyan;}
+}
+  /* if desktop */
+  .mobile_device_380px {
+    display: none;
+}
+.mobile_device_480px {
+    display: none;
+}
+
+.hold_trigger{
+    cursor: pointer;
+}
+/* if mobile device max width 380px */
+@media only screen and (max-device-width: 380px) {
+    
+} 
+
+/* if mobile device max width 480px */
+@media only screen and (max-device-width: 480px) {
+   body{
+    display: grid;
+   }
+   #confirm{
+    display:none;
+   }
+   #canvas{
+    display: flex;
+    position: absolute;
+    left: 50%;
+    top: 500px;
+    margin-left: -100px;
+    height: 280px;
+    width: 200px;
+    
+    }
+    .hold_trigger{
+        cursor:default;
+    }
+    .player_choice button{
+        border-color: purple;
+        border-radius: 5px;
+        border-width: 5px;
+        background-color: cyan;
+        height: 80px;
+        width: 75px;
+        img{
+            height: 60px;
+            width: 60px;
+        }
+    }
+    #player_interface{
+        display: grid;
+        position: relative;
+        left: 50%;
+        margin-left: -125px;
+        top: 100px;
+        height: 250px;
+        width: auto;
+    }
+    .scoreboard{
+        .leftField{
+            display: none;
+        }
+    }
 }
